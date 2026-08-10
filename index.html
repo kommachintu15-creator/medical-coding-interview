@@ -4,16 +4,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Medical Coding Freshers</title>
 
 <style>
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
   background: #f5f7fb;
   color: #172033;
@@ -23,9 +23,6 @@ header {
   background: white;
   padding: 18px;
   border-bottom: 1px solid #e5e7eb;
-  position: sticky;
-  top: 0;
-  z-index: 10;
 }
 
 .logo {
@@ -34,487 +31,498 @@ header {
 }
 
 .tagline {
-  font-size: 13px;
   color: #667085;
+  font-size: 13px;
   margin-top: 5px;
 }
 
-nav {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  margin-top: 15px;
-}
-
-nav button {
-  border: 1px solid #dbe2ea;
-  background: white;
-  padding: 9px 13px;
-  border-radius: 20px;
-  white-space: nowrap;
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 25px 18px;
 }
 
 .hero {
-  padding: 45px 20px;
   text-align: center;
-  background: linear-gradient(135deg, #eaf2ff, #ffffff);
+  padding: 35px 10px;
 }
 
 .hero h1 {
-  font-size: 31px;
-  line-height: 1.2;
-  margin-bottom: 15px;
+  font-size: 30px;
+  margin-bottom: 12px;
 }
 
 .hero p {
   color: #667085;
   line-height: 1.6;
-  max-width: 600px;
-  margin: auto;
-}
-
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 30px 18px;
-}
-
-.section-title {
-  font-size: 23px;
-  margin-bottom: 18px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 15px;
 }
 
 .card {
   background: white;
   padding: 22px;
+  margin-bottom: 15px;
   border-radius: 16px;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 5px 18px rgba(0,0,0,0.04);
-}
-
-.card-icon {
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-.card h3 {
-  margin-bottom: 7px;
-}
-
-.card p {
-  color: #667085;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.subject-card {
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.subject-card:hover {
-  transform: translateY(-2px);
-}
-
-.levels {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  margin-top: 15px;
-}
-
-.level {
-  padding: 17px;
-  border-radius: 13px;
-  background: white;
-  border: 1px solid #e5e7eb;
-  cursor: pointer;
-}
-
-.easy {
-  border-left: 5px solid #22c55e;
-}
-
-.medium {
-  border-left: 5px solid #f59e0b;
-}
-
-.hard {
-  border-left: 5px solid #ef4444;
-}
-
-.level strong {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.level span {
-  color: #667085;
-  font-size: 13px;
-}
-
-.interview {
-  margin-top: 30px;
-}
-
-footer {
-  text-align: center;
-  padding: 30px 15px;
-  color: #667085;
-  font-size: 13px;
 }
 
 button {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: bold;
   cursor: pointer;
 }
 
-@media (min-width: 700px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .levels {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .hero h1 {
-    font-size: 42px;
-  }
+.primary {
+  background: #2563eb;
+  color: white;
 }
+
+.option {
+  background: #f8fafc;
+  border: 1px solid #dbe2ea;
+  text-align: left;
+}
+
+.option:hover {
+  background: #eef4ff;
+}
+
+.correct {
+  background: #dcfce7 !important;
+  border: 2px solid #22c55e !important;
+}
+
+.wrong {
+  background: #fee2e2 !important;
+  border: 2px solid #ef4444 !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.progress {
+  color: #667085;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.explanation {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f8fafc;
+  border-radius: 10px;
+  line-height: 1.5;
+}
+
+.score {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.weak {
+  background: #fff7ed;
+  padding: 18px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-
-<div class="logo">Medical Coding Freshers</div>
-
-<div class="tagline">
-Learn • Practice • Prepare • Get Interview Ready
-</div>
-
-<nav>
-<button onclick="goHome()">Home</button>
-<button onclick="showSubjects()">Subjects</button>
-<button onclick="showAssessments()">Assessments</button>
-<button onclick="showInterviews()">Interviews</button>
-</nav>
-
+  <div class="logo">Medical Coding Freshers</div>
+  <div class="tagline">
+    Learn • Practice • Prepare • Get Interview Ready
+  </div>
 </header>
 
+<div class="container">
 
-<section class="hero">
+  <section id="home">
 
-<h1>Medical Coding Assessment & Interview Preparation</h1>
+    <div class="hero">
+      <h1>Medical Coding Assessment</h1>
 
-<p>
-Practice medical coding, strengthen your knowledge,
-take assessments and prepare for your first interview.
-</p>
+      <p>
+        Practice your knowledge with subject-based
+        medical coding assessments.
+      </p>
+    </div>
 
-</section>
+    <div class="card">
+      <h2>📚 Anatomy</h2>
 
+      <p>
+        Choose your difficulty level.
+      </p>
 
-<main class="container" id="content">
+      <button class="primary" onclick="startTest()">
+        🟢 Anatomy — Easy
+      </button>
+    </div>
 
-
-<h2 class="section-title">What do you want to practice?</h2>
-
-<div class="cards">
-
-
-<div class="card subject-card" onclick="showSubjects()">
-
-<div class="card-icon">📚</div>
-
-<h3>Subjects</h3>
-
-<p>
-Study important medical coding subjects
-and prepare step-by-step.
-</p>
-
-</div>
+  </section>
 
 
-<div class="card subject-card" onclick="showAssessments()">
+  <section id="quiz" class="hidden">
 
-<div class="card-icon">📝</div>
+    <div class="progress" id="progress"></div>
 
-<h3>Assessments</h3>
+    <div class="card">
 
-<p>
-Take Easy, Medium and Difficult assessments
-with 15 questions per level.
-</p>
+      <h2 id="question"></h2>
 
-</div>
+      <div id="options"></div>
 
+      <div id="explanation" class="explanation hidden"></div>
 
-<div class="card subject-card" onclick="showInterviews()">
+      <button
+        id="nextButton"
+        class="primary hidden"
+        onclick="nextQuestion()">
+        Next Question
+      </button>
 
-<div class="card-icon">💼</div>
+    </div>
 
-<h3>Medical Coding Interviews</h3>
-
-<p>
-Practice technical medical coding interview
-questions and answers.
-</p>
-
-</div>
+  </section>
 
 
-<div class="card subject-card" onclick="showHR()">
+  <section id="result" class="hidden">
 
-<div class="card-icon">🧑‍💼</div>
+    <div class="card">
 
-<h3>HR & Behavioral</h3>
+      <h2>🎉 Assessment Complete</h2>
 
-<p>
-Prepare answers for common HR and
-behavioral interview questions.
-</p>
+      <div class="score" id="score"></div>
 
-</div>
+      <p id="resultText"></p>
 
+      <div class="weak">
+        <h3>🎯 Weak Points</h3>
+        <p id="weakPoints"></p>
+      </div>
 
-<div class="card subject-card" onclick="showScenario()">
+      <button class="primary" onclick="location.reload()">
+        Take Again
+      </button>
 
-<div class="card-icon">🎯</div>
+    </div>
 
-<h3>Scenario Questions</h3>
-
-<p>
-Practice real-world situations commonly
-asked during interviews.
-</p>
+  </section>
 
 </div>
-
-
-</div>
-
-</main>
-
-
-<footer>
-© 2026 Medical Coding Freshers
-</footer>
 
 
 <script>
 
-function goHome() {
-location.reload();
+const questions = [
+
+{
+question: "How many chambers does the human heart have?",
+options: ["2", "3", "4", "5"],
+answer: 2,
+topic: "Heart",
+explanation: "The human heart has four chambers: two atria and two ventricles."
+},
+
+{
+question: "Which organ pumps blood throughout the body?",
+options: ["Lung", "Heart", "Kidney", "Liver"],
+answer: 1,
+topic: "Heart",
+explanation: "The heart pumps blood throughout the body."
+},
+
+{
+question: "Which organ is mainly responsible for breathing?",
+options: ["Liver", "Heart", "Lungs", "Stomach"],
+answer: 2,
+topic: "Respiratory System",
+explanation: "The lungs are the main organs responsible for gas exchange and breathing."
+},
+
+{
+question: "Which organ stores urine?",
+options: ["Kidney", "Bladder", "Ureter", "Urethra"],
+answer: 1,
+topic: "Urinary System",
+explanation: "The urinary bladder temporarily stores urine."
+},
+
+{
+question: "Which structure carries urine from the kidney to the bladder?",
+options: ["Urethra", "Ureter", "Aorta", "Trachea"],
+answer: 1,
+topic: "Urinary System",
+explanation: "The ureter carries urine from each kidney to the urinary bladder."
+},
+
+{
+question: "Which organ produces bile?",
+options: ["Stomach", "Liver", "Pancreas", "Spleen"],
+answer: 1,
+topic: "Digestive System",
+explanation: "The liver produces bile, which helps digest fats."
+},
+
+{
+question: "Where does most nutrient absorption occur?",
+options: ["Stomach", "Small intestine", "Large intestine", "Esophagus"],
+answer: 1,
+topic: "Digestive System",
+explanation: "Most nutrient absorption occurs in the small intestine."
+},
+
+{
+question: "Which bone protects the brain?",
+options: ["Femur", "Skull", "Tibia", "Humerus"],
+answer: 1,
+topic: "Skeletal System",
+explanation: "The skull surrounds and protects the brain."
+},
+
+{
+question: "What is the largest bone in the human body?",
+options: ["Tibia", "Humerus", "Femur", "Radius"],
+answer: 2,
+topic: "Skeletal System",
+explanation: "The femur is the longest and strongest major bone in the human body."
+},
+
+{
+question: "Which organ is located behind the stomach?",
+options: ["Pancreas", "Lung", "Bladder", "Thyroid"],
+answer: 0,
+topic: "Digestive System",
+explanation: "The pancreas is located behind the stomach."
+},
+
+{
+question: "Which gland is located in the neck?",
+options: ["Thyroid", "Adrenal", "Pancreas", "Pituitary"],
+answer: 0,
+topic: "Endocrine System",
+explanation: "The thyroid gland is located in the front of the neck."
+},
+
+{
+question: "Which organ filters waste from the blood?",
+options: ["Heart", "Kidney", "Stomach", "Lung"],
+answer: 1,
+topic: "Urinary System",
+explanation: "The kidneys filter waste and excess substances from the blood."
+},
+
+{
+question: "What connects muscles to bones?",
+options: ["Ligaments", "Tendons", "Cartilage", "Nerves"],
+answer: 1,
+topic: "Musculoskeletal System",
+explanation: "Tendons connect muscles to bones."
+},
+
+{
+question: "What connects bone to bone?",
+options: ["Tendon", "Ligament", "Muscle", "Nerve"],
+answer: 1,
+topic: "Musculoskeletal System",
+explanation: "Ligaments connect bones to other bones."
+},
+
+{
+question: "Which organ is the largest internal organ?",
+options: ["Heart", "Liver", "Kidney", "Lung"],
+answer: 1,
+topic: "Digestive System",
+explanation: "The liver is the largest internal organ in the human body."
 }
 
-
-function showSubjects() {
-
-document.getElementById("content").innerHTML = `
-
-<h2 class="section-title">📚 Subjects</h2>
-
-<div class="cards">
-
-<div class="card subject-card">
-<div class="card-icon">🫀</div>
-<h3>Anatomy</h3>
-<p>Study human body structures and systems.</p>
-</div>
-
-<div class="card subject-card">
-<div class="card-icon">🧬</div>
-<h3>Physiology</h3>
-<p>Learn how the human body functions.</p>
-</div>
-
-<div class="card subject-card">
-<div class="card-icon">🩺</div>
-<h3>Medical Terminology</h3>
-<p>Build your medical vocabulary.</p>
-</div>
-
-<div class="card subject-card">
-<div class="card-icon">🦠</div>
-<h3>Pathology</h3>
-<p>Understand diseases and conditions.</p>
-</div>
-
-<div class="card subject-card">
-<div class="card-icon">📕</div>
-<h3>ICD-10-CM</h3>
-<p>Practice diagnosis coding concepts.</p>
-</div>
-
-<div class="card subject-card">
-<div class="card-icon">📘</div>
-<h3>CPT</h3>
-<p>Learn procedure and service coding.</p>
-</div>
-
-<div class="card subject-card">
-<div class="card-icon">📗</div>
-<h3>HCPCS</h3>
-<p>Learn HCPCS coding concepts.</p>
-</div>
-
-<div class="card subject-card">
-<div class="card-icon">📋</div>
-<h3>Coding Guidelines</h3>
-<p>Practice important coding guidelines.</p>
-</div>
-
-<div class="card subject-card">
-<div class="card-icon">🏥</div>
-<h3>Disease Knowledge</h3>
-<p>Build disease and condition knowledge.</p>
-</div>
-
-</div>
-
-`;
-
-}
+];
 
 
-function showAssessments() {
-
-document.getElementById("content").innerHTML = `
-
-<h2 class="section-title">📝 Assessments</h2>
-
-<p style="color:#667085; margin-bottom:20px;">
-Choose a subject and difficulty level.
-Each assessment will contain 15 questions.
-</p>
-
-<div class="levels">
-
-<div class="level easy">
-<strong>🟢 Easy</strong>
-<span>15 questions • Beginner level</span>
-</div>
-
-<div class="level medium">
-<strong>🟡 Medium</strong>
-<span>15 questions • Intermediate level</span>
-</div>
-
-<div class="level hard">
-<strong>🔴 Difficult</strong>
-<span>15 questions • Advanced level</span>
-</div>
-
-</div>
-
-`;
-
-}
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+let weakTopics = {};
 
 
-function showInterviews() {
+function startTest() {
 
-document.getElementById("content").innerHTML = `
+  document.getElementById("home").classList.add("hidden");
 
-<h2 class="section-title">💼 Medical Coding Interviews</h2>
+  document.getElementById("quiz").classList.remove("hidden");
 
-<div class="cards">
-
-<div class="card">
-<div class="card-icon">📕</div>
-<h3>ICD-10-CM Interview Questions</h3>
-<p>Technical questions for coding interviews.</p>
-</div>
-
-<div class="card">
-<div class="card-icon">📘</div>
-<h3>CPT Interview Questions</h3>
-<p>Procedure coding interview preparation.</p>
-</div>
-
-<div class="card">
-<div class="card-icon">🏥</div>
-<h3>Medical Coding Technical</h3>
-<p>Common technical questions asked from freshers.</p>
-</div>
-
-</div>
-
-`;
-
-}
-
-
-function showHR() {
-
-document.getElementById("content").innerHTML = `
-
-<h2 class="section-title">🧑‍💼 HR & Behavioral Questions</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Tell me about yourself.</h3>
-<p>Practice a professional fresher introduction.</p>
-</div>
-
-<div class="card">
-<h3>Why did you choose medical coding?</h3>
-<p>Prepare a clear and confident answer.</p>
-</div>
-
-<div class="card">
-<h3>What are your strengths and weaknesses?</h3>
-<p>Learn how to answer this common HR question.</p>
-</div>
-
-<div class="card">
-<h3>How do you handle pressure?</h3>
-<p>Practice a professional behavioral response.</p>
-</div>
-
-</div>
-
-`;
+  showQuestion();
 
 }
 
 
-function showScenario() {
+function showQuestion() {
 
-document.getElementById("content").innerHTML = `
+  answered = false;
 
-<h2 class="section-title">🎯 Scenario-Based Questions</h2>
+  const q = questions[currentQuestion];
 
-<div class="cards">
+  document.getElementById("progress").innerText =
+    "Question " + (currentQuestion + 1) +
+    " of " + questions.length;
 
-<div class="card">
-<h3>Incomplete Documentation</h3>
-<p>What would you do if documentation is incomplete?</p>
-</div>
+  document.getElementById("question").innerText =
+    q.question;
 
-<div class="card">
-<h3>Unsure About a Code</h3>
-<p>What would you do when you are unsure about code selection?</p>
-</div>
+  const options = document.getElementById("options");
 
-<div class="card">
-<h3>Conflicting Information</h3>
-<p>How would you handle conflicting documentation?</p>
-</div>
+  options.innerHTML = "";
 
-</div>
+  q.options.forEach((option, index) => {
 
-`;
+    const button = document.createElement("button");
+
+    button.className = "option";
+
+    button.innerText = option;
+
+    button.onclick = function() {
+
+      selectAnswer(index);
+
+    };
+
+    options.appendChild(button);
+
+  });
+
+  document.getElementById("explanation")
+    .classList.add("hidden");
+
+  document.getElementById("nextButton")
+    .classList.add("hidden");
+
+}
+
+
+function selectAnswer(selected) {
+
+  if (answered) return;
+
+  answered = true;
+
+  const q = questions[currentQuestion];
+
+  const buttons =
+    document.querySelectorAll(".option");
+
+  buttons.forEach((button, index) => {
+
+    if (index === q.answer) {
+
+      button.classList.add("correct");
+
+    }
+
+    if (index === selected && selected !== q.answer) {
+
+      button.classList.add("wrong");
+
+    }
+
+  });
+
+
+  if (selected === q.answer) {
+
+    score++;
+
+  } else {
+
+    if (!weakTopics[q.topic]) {
+
+      weakTopics[q.topic] = 0;
+
+    }
+
+    weakTopics[q.topic]++;
+
+  }
+
+
+  const explanation =
+    document.getElementById("explanation");
+
+  explanation.innerHTML =
+    "<strong>Explanation:</strong><br>" +
+    q.explanation;
+
+  explanation.classList.remove("hidden");
+
+  document.getElementById("nextButton")
+    .classList.remove("hidden");
+
+}
+
+
+function nextQuestion() {
+
+  currentQuestion++;
+
+  if (currentQuestion < questions.length) {
+
+    showQuestion();
+
+  } else {
+
+    showResult();
+
+  }
+
+}
+
+
+function showResult() {
+
+  document.getElementById("quiz")
+    .classList.add("hidden");
+
+  document.getElementById("result")
+    .classList.remove("hidden");
+
+
+  document.getElementById("score").innerText =
+    score + " / " + questions.length;
+
+
+  const percentage =
+    Math.round((score / questions.length) * 100);
+
+
+  document.getElementById("resultText").innerText =
+    "You scored " + percentage + "%. Keep practicing!";
+
+
+  const topics =
+    Object.keys(weakTopics);
+
+
+  if (topics.length === 0) {
+
+    document.getElementById("weakPoints").innerText =
+      "Excellent! No weak points identified.";
+
+  } else {
+
+    document.getElementById("weakPoints").innerText =
+      topics.join(", ");
+
+  }
 
 }
 
