@@ -1,275 +1,524 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Medical Coding Freshers</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Coding Freshers</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #172033;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+}
 
-    header {
-      background: #ffffff;
-      padding: 18px 20px;
-      border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+header {
+  background: white;
+  padding: 18px;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
-    .logo {
-      font-size: 20px;
-      font-weight: 700;
-    }
+.logo {
+  font-size: 21px;
+  font-weight: bold;
+}
 
-    .tagline {
-      font-size: 13px;
-      color: #667085;
-      margin-top: 4px;
-    }
+.tagline {
+  font-size: 13px;
+  color: #667085;
+  margin-top: 5px;
+}
 
-    .hero {
-      padding: 45px 20px 30px;
-      text-align: center;
-      background: linear-gradient(135deg, #eef4ff, #ffffff);
-    }
+nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin-top: 15px;
+}
 
-    .hero h1 {
-      font-size: 32px;
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
+nav button {
+  border: 1px solid #dbe2ea;
+  background: white;
+  padding: 9px 13px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
 
-    .hero p {
-      color: #667085;
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
+.hero {
+  padding: 45px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #eaf2ff, #ffffff);
+}
 
-    .buttons {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+.hero h1 {
+  font-size: 31px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
 
-    button {
-      border: none;
-      padding: 13px 20px;
-      border-radius: 10px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-    }
+.hero p {
+  color: #667085;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: auto;
+}
 
-    .primary {
-      background: #2563eb;
-      color: white;
-    }
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px 18px;
+}
 
-    .secondary {
-      background: white;
-      color: #2563eb;
-      border: 1px solid #2563eb;
-    }
+.section-title {
+  font-size: 23px;
+  margin-bottom: 18px;
+}
 
-    .section {
-      padding: 30px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
 
-    .section h2 {
-      font-size: 22px;
-      margin-bottom: 18px;
-    }
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.04);
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
-    }
+.card-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
 
-    .card {
-      background: white;
-      padding: 22px;
-      border-radius: 16px;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-    }
+.card h3 {
+  margin-bottom: 7px;
+}
 
-    .icon {
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
+.card p {
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.5;
+}
 
-    .card h3 {
-      margin-bottom: 7px;
-      font-size: 18px;
-    }
+.subject-card {
+  cursor: pointer;
+  transition: 0.2s;
+}
 
-    .card p {
-      color: #667085;
-      font-size: 14px;
-      line-height: 1.5;
-    }
+.subject-card:hover {
+  transform: translateY(-2px);
+}
 
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 20px;
-    }
+.levels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 15px;
+}
 
-    .stat {
-      background: white;
-      padding: 15px 8px;
-      text-align: center;
-      border-radius: 12px;
-      border: 1px solid #e5e7eb;
-    }
+.level {
+  padding: 17px;
+  border-radius: 13px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+}
 
-    .stat strong {
-      display: block;
-      font-size: 20px;
-    }
+.easy {
+  border-left: 5px solid #22c55e;
+}
 
-    .stat span {
-      color: #667085;
-      font-size: 12px;
-    }
+.medium {
+  border-left: 5px solid #f59e0b;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      color: #667085;
-      font-size: 13px;
-    }
+.hard {
+  border-left: 5px solid #ef4444;
+}
 
-    @media (min-width: 700px) {
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
+.level strong {
+  display: block;
+  margin-bottom: 5px;
+}
 
-      .hero h1 {
-        font-size: 42px;
-      }
-    }
-  </style>
+.level span {
+  color: #667085;
+  font-size: 13px;
+}
+
+.interview {
+  margin-top: 30px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  color: #667085;
+  font-size: 13px;
+}
+
+button {
+  cursor: pointer;
+}
+
+@media (min-width: 700px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .levels {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">Medical Coding Freshers</div>
-  <div class="tagline">Learn • Practice • Prepare • Succeed</div>
+
+<div class="logo">Medical Coding Freshers</div>
+
+<div class="tagline">
+Learn • Practice • Prepare • Get Interview Ready
+</div>
+
+<nav>
+<button onclick="goHome()">Home</button>
+<button onclick="showSubjects()">Subjects</button>
+<button onclick="showAssessments()">Assessments</button>
+<button onclick="showInterviews()">Interviews</button>
+</nav>
+
 </header>
 
+
 <section class="hero">
-  <h1>Medical Coding Assessment & Interview Preparation</h1>
 
-  <p>
-    Practice medical coding questions, test your knowledge,
-    and prepare for your first coding interview.
-  </p>
+<h1>Medical Coding Assessment & Interview Preparation</h1>
 
-  <div class="buttons">
-    <button class="primary" onclick="startAssessment()">
-      Start Assessment
-    </button>
-
-    <button class="secondary" onclick="showInterview()">
-      Interview Questions
-    </button>
-  </div>
-
-  <div class="stats">
-    <div class="stat">
-      <strong>MCQ</strong>
-      <span>Assessments</span>
-    </div>
-
-    <div class="stat">
-      <strong>ICD</strong>
-      <span>Coding Practice</span>
-    </div>
-
-    <div class="stat">
-      <strong>HR</strong>
-      <span>Interview Prep</span>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-
-  <h2>Practice & Prepare</h2>
-
-  <div class="cards">
-
-    <div class="card" onclick="startAssessment()">
-      <div class="icon">📝</div>
-      <h3>Assessments</h3>
-      <p>
-        Test your knowledge with medical coding
-        multiple-choice questions.
-      </p>
-    </div>
-
-    <div class="card" onclick="startAssessment()">
-      <div class="icon">🎯</div>
-      <h3>Mock Tests</h3>
-      <p>
-        Practice exam-style questions and check
-        your score instantly.
-      </p>
-    </div>
-
-    <div class="card" onclick="showInterview()">
-      <div class="icon">💼</div>
-      <h3>Interview Questions</h3>
-      <p>
-        Prepare for medical coding and HR
-        interview questions.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="icon">📚</div>
-      <h3>Topics</h3>
-      <p>
-        Anatomy, terminology, ICD-10-CM,
-        guidelines and more.
-      </p>
-    </div>
-
-  </div>
+<p>
+Practice medical coding, strengthen your knowledge,
+take assessments and prepare for your first interview.
+</p>
 
 </section>
+
+
+<main class="container" id="content">
+
+
+<h2 class="section-title">What do you want to practice?</h2>
+
+<div class="cards">
+
+
+<div class="card subject-card" onclick="showSubjects()">
+
+<div class="card-icon">📚</div>
+
+<h3>Subjects</h3>
+
+<p>
+Study important medical coding subjects
+and prepare step-by-step.
+</p>
+
+</div>
+
+
+<div class="card subject-card" onclick="showAssessments()">
+
+<div class="card-icon">📝</div>
+
+<h3>Assessments</h3>
+
+<p>
+Take Easy, Medium and Difficult assessments
+with 15 questions per level.
+</p>
+
+</div>
+
+
+<div class="card subject-card" onclick="showInterviews()">
+
+<div class="card-icon">💼</div>
+
+<h3>Medical Coding Interviews</h3>
+
+<p>
+Practice technical medical coding interview
+questions and answers.
+</p>
+
+</div>
+
+
+<div class="card subject-card" onclick="showHR()">
+
+<div class="card-icon">🧑‍💼</div>
+
+<h3>HR & Behavioral</h3>
+
+<p>
+Prepare answers for common HR and
+behavioral interview questions.
+</p>
+
+</div>
+
+
+<div class="card subject-card" onclick="showScenario()">
+
+<div class="card-icon">🎯</div>
+
+<h3>Scenario Questions</h3>
+
+<p>
+Practice real-world situations commonly
+asked during interviews.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
 
 <footer>
-  © 2026 Medical Coding Freshers
+© 2026 Medical Coding Freshers
 </footer>
 
-<script>
-  function startAssessment() {
-    alert("Assessment section coming next!");
-  }
 
-  function showInterview() {
-    alert("Interview section coming next!");
-  }
+<script>
+
+function goHome() {
+location.reload();
+}
+
+
+function showSubjects() {
+
+document.getElementById("content").innerHTML = `
+
+<h2 class="section-title">📚 Subjects</h2>
+
+<div class="cards">
+
+<div class="card subject-card">
+<div class="card-icon">🫀</div>
+<h3>Anatomy</h3>
+<p>Study human body structures and systems.</p>
+</div>
+
+<div class="card subject-card">
+<div class="card-icon">🧬</div>
+<h3>Physiology</h3>
+<p>Learn how the human body functions.</p>
+</div>
+
+<div class="card subject-card">
+<div class="card-icon">🩺</div>
+<h3>Medical Terminology</h3>
+<p>Build your medical vocabulary.</p>
+</div>
+
+<div class="card subject-card">
+<div class="card-icon">🦠</div>
+<h3>Pathology</h3>
+<p>Understand diseases and conditions.</p>
+</div>
+
+<div class="card subject-card">
+<div class="card-icon">📕</div>
+<h3>ICD-10-CM</h3>
+<p>Practice diagnosis coding concepts.</p>
+</div>
+
+<div class="card subject-card">
+<div class="card-icon">📘</div>
+<h3>CPT</h3>
+<p>Learn procedure and service coding.</p>
+</div>
+
+<div class="card subject-card">
+<div class="card-icon">📗</div>
+<h3>HCPCS</h3>
+<p>Learn HCPCS coding concepts.</p>
+</div>
+
+<div class="card subject-card">
+<div class="card-icon">📋</div>
+<h3>Coding Guidelines</h3>
+<p>Practice important coding guidelines.</p>
+</div>
+
+<div class="card subject-card">
+<div class="card-icon">🏥</div>
+<h3>Disease Knowledge</h3>
+<p>Build disease and condition knowledge.</p>
+</div>
+
+</div>
+
+`;
+
+}
+
+
+function showAssessments() {
+
+document.getElementById("content").innerHTML = `
+
+<h2 class="section-title">📝 Assessments</h2>
+
+<p style="color:#667085; margin-bottom:20px;">
+Choose a subject and difficulty level.
+Each assessment will contain 15 questions.
+</p>
+
+<div class="levels">
+
+<div class="level easy">
+<strong>🟢 Easy</strong>
+<span>15 questions • Beginner level</span>
+</div>
+
+<div class="level medium">
+<strong>🟡 Medium</strong>
+<span>15 questions • Intermediate level</span>
+</div>
+
+<div class="level hard">
+<strong>🔴 Difficult</strong>
+<span>15 questions • Advanced level</span>
+</div>
+
+</div>
+
+`;
+
+}
+
+
+function showInterviews() {
+
+document.getElementById("content").innerHTML = `
+
+<h2 class="section-title">💼 Medical Coding Interviews</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-icon">📕</div>
+<h3>ICD-10-CM Interview Questions</h3>
+<p>Technical questions for coding interviews.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">📘</div>
+<h3>CPT Interview Questions</h3>
+<p>Procedure coding interview preparation.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🏥</div>
+<h3>Medical Coding Technical</h3>
+<p>Common technical questions asked from freshers.</p>
+</div>
+
+</div>
+
+`;
+
+}
+
+
+function showHR() {
+
+document.getElementById("content").innerHTML = `
+
+<h2 class="section-title">🧑‍💼 HR & Behavioral Questions</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Tell me about yourself.</h3>
+<p>Practice a professional fresher introduction.</p>
+</div>
+
+<div class="card">
+<h3>Why did you choose medical coding?</h3>
+<p>Prepare a clear and confident answer.</p>
+</div>
+
+<div class="card">
+<h3>What are your strengths and weaknesses?</h3>
+<p>Learn how to answer this common HR question.</p>
+</div>
+
+<div class="card">
+<h3>How do you handle pressure?</h3>
+<p>Practice a professional behavioral response.</p>
+</div>
+
+</div>
+
+`;
+
+}
+
+
+function showScenario() {
+
+document.getElementById("content").innerHTML = `
+
+<h2 class="section-title">🎯 Scenario-Based Questions</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Incomplete Documentation</h3>
+<p>What would you do if documentation is incomplete?</p>
+</div>
+
+<div class="card">
+<h3>Unsure About a Code</h3>
+<p>What would you do when you are unsure about code selection?</p>
+</div>
+
+<div class="card">
+<h3>Conflicting Information</h3>
+<p>How would you handle conflicting documentation?</p>
+</div>
+
+</div>
+
+`;
+
+}
+
 </script>
 
 </body>
-  </html>
+</html>
